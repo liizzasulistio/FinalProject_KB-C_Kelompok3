@@ -45,8 +45,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\AStar\CharacterPathfindingMovementHandler.cs" />
+     <Compile Include="Assets\Script\AStar\GridCM.cs" />
+     <Compile Include="Assets\Script\AStar\Node.cs" />
+     <Compile Include="Assets\Script\AStar\PathFinding.cs" />
      <Compile Include="Assets\Script\Bullet.cs" />
-     <Compile Include="Assets\Script\Node.cs" />
      <Compile Include="Assets\Script\PlayerMovement.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/FP_KB-C_Kelompok-3/House of Miro/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
