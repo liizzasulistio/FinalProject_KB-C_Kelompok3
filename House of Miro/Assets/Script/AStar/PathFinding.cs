@@ -13,7 +13,7 @@ public class PathFinding
 
     public PathFinding(int width, int height){
         originPos = GameObject.Find("originPos").transform.position;
-        grid = new GridCM<Node>(width, height, 1f, originPos, (GridCM<Node> grid, int x, int y, bool isWalkable) => new Node(grid, x, y, isWalkable)); 
+        grid = new GridCM<Node>(width, height, 1.01f, originPos, (GridCM<Node> grid, int x, int y, bool isWalkable) => new Node(grid, x, y, isWalkable)); 
     }
     public List<Vector3> FindPath(Vector3 startWorldPosition, Vector3 endWorldPosition){
         grid.GetXY(startWorldPosition, out int startX, out int startY);

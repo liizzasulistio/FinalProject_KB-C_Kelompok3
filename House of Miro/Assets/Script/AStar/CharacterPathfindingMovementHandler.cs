@@ -11,28 +11,26 @@ public class CharacterPathfindingMovementHandler : MonoBehaviour {
     public Transform target;
     public Vector3 prevTarget;
 
-
     private void Start() {
-        target = GameObject.Find("Player").transform;
-        prevTarget = new Vector2(target.position.x, target.position.y);
-        if(target == null){
-            Debug.Log("target not found");
-        }
-        else{
-            Debug.Log("target found!");
-        }
-        pathFinding = new PathFinding(26, 21);
-        SetTargetPosition(target.position);
+            target = GameObject.Find("Player").transform;
+            prevTarget = new Vector2(target.position.x, target.position.y);
+            if(target == null){
+                Debug.Log("target not found");
+            }
+            else{
+                Debug.Log("target found!");
+            }
+            pathFinding = new PathFinding(26, 21);
+            SetTargetPosition(target.position);
     }
 
     private void Update() {
-        HandleMovement();
-        if(prevTarget != target.position){
-            Debug.Log("player moved!");
-            SetTargetPosition(target.position);
-            prevTarget = new Vector2(target.position.x, target.position.y);
-        }
-        
+            HandleMovement();
+            if(Vector3.Distance(prevTarget,target.position) >= 1f){
+                pathVectorList = null;
+                SetTargetPosition(target.position);
+                prevTarget = new Vector2(target.position.x, target.position.y);
+            }
     }
     
     private void HandleMovement() {
@@ -50,7 +48,7 @@ public class CharacterPathfindingMovementHandler : MonoBehaviour {
             }
         }
         else{
-            //Debug.Log("path not found");
+            Debug.Log("path not found");
         }
     }
 

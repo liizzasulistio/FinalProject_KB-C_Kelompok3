@@ -19,9 +19,14 @@ public class GridCM<TGridObject>
 
         gridArray = new TGridObject[width, height];
 
+        int layerId = 9;
+        int layerMask = 1 << layerId;
         for (int x = 0; x < gridArray.GetLength(0); x++){
             for (int y = 0; y < gridArray.GetLength(1); y++){
-                bool walkable = !(Physics2D.OverlapCircle(GetWorldPosition(x, y), cellSize/5));
+                Vector3 center = GetWorldPosition(x, y);
+
+                var ground = Physics2D.OverlapBox(new Vector2(center.x + 0.5f, center.y + 0.5f), new Vector2(0.9f, 0.9f), 0f, layerMask);
+                bool walkable = !ground;
                 gridArray[x, y] = createGridObject(this, x, y, walkable);
                 if(!walkable){
                     Debug.Log("Node " + x + " " + y + " is unwalkable");
