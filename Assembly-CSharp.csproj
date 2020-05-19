@@ -36,20 +36,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\EnemySpawn.cs" />
-     <Compile Include="Assets\EnemySpawner.cs" />
-     <Compile Include="Assets\Goals.cs" />
      <Compile Include="Assets\Script\AStar\CharacterPathfindingMovementHandler.cs" />
      <Compile Include="Assets\Script\AStar\GridCM.cs" />
      <Compile Include="Assets\Script\AStar\Node.cs" />
      <Compile Include="Assets\Script\AStar\PathFinding.cs" />
      <Compile Include="Assets\Script\EnemyAttack.cs" />
+     <Compile Include="Assets\Script\EnemySpawn.cs" />
+     <Compile Include="Assets\Script\Goals.cs" />
      <Compile Include="Assets\Script\Hostage.cs" />
      <Compile Include="Assets\Script\PlayerHealth.cs" />
      <Compile Include="Assets\Script\PlayerMovement.cs" />
+     <Compile Include="Assets\Script\ShowHealth.cs" />
      <Compile Include="Assets\Script\Weapon.cs" />
-     <Compile Include="Assets\ShowHealth.cs" />
-     <Compile Include="Assets\script.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
