@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int curHealth;
+    public static int curHealth;
     private bool gameOver;
     
    // public float healtBarLength;
@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
        // healthBarLength = Screen.width / 2;
+       curHealth = maxHealth;
        gameOver = false;
     }
 
@@ -33,11 +34,12 @@ public class PlayerHealth : MonoBehaviour
     
      public void AddjustCurrentHealth(int adj) {
        curHealth += adj;
-       Debug.Log(curHealth);  
+       //Debug.Log(curHealth);  
          if(curHealth < 0){
             curHealth = 0;
             Debug.Log("player lose");
             // pause the game
+            ShowHealth.death = true;
             Time.timeScale = 0;
             //SceneManager.LoadScene (sceneName:"Put the name of the scene here");
          }

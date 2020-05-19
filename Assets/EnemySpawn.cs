@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public float time = 5f;
+    public float time = 3f;
     private float current;
     public GameObject enemy;
     void Start(){
